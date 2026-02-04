@@ -4,13 +4,13 @@ defaults:
   - callbacks: default
   - _self_
 
-seed: 0
+seed: 1
 ignore_warnings: False
 
 trainer:
   _target_: pytorch_lightning.Trainer
   gradient_clip_val: 200
-  max_epochs: 800
+  max_epochs: 2000
   log_every_n_steps: 5
   # track_grad_norm: 2
 
@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output.h5
+    filename: lfads_output_facdim60.h5
     num_samples: 50

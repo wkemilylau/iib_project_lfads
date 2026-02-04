@@ -15,10 +15,10 @@ from lfads_torch.extensions.tune import (
 from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS ----------
-PROJECT_STR = "lfads-torch-example"
-DATASET_STR = "nlb_mc_maze"
-RUN_TAG = datetime.now().strftime("%y%m%d") + "_examplePBT"
-RUN_DIR = Path("/snel/share/runs") / PROJECT_STR / DATASET_STR / RUN_TAG
+PROJECT_STR = "vlPAG_pbt"
+DATASET_STR = "vlPAG"
+RUN_TAG = datetime.now().strftime("%y%m%d") + "_pbt"
+RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 HYPERPARAM_SPACE = {
     "model.lr_init": HyperParam(
         1e-5, 5e-3, explore_wt=0.3, enforce_limits=True, init=4e-3
@@ -43,7 +43,7 @@ def clip_config_rates(config):
 
 
 init_space = {name: tune.sample_from(hp.init) for name, hp in HYPERPARAM_SPACE.items()}
-# Set the mandatory config overrides to select datamodule and model
+# # Set the mandatory config overrides to select datamodule and model
 mandatory_overrides = {
     "datamodule": DATASET_STR,
     "model": DATASET_STR,
@@ -62,7 +62,7 @@ burn_in_period = 80 + 25
 analysis = tune.run(
     tune.with_parameters(
         run_model,
-        config_path="../configs/pbt.yaml",
+        config_path="../configs/pbt_bst.yaml",
         do_posterior_sample=False,
     ),
     metric=metric,
@@ -101,9 +101,15 @@ shutil.copytree(analysis.best_logdir, best_model_dir)
 os.chdir(best_model_dir)
 # Load the best model and run posterior sampling (skip training)
 best_ckpt_dir = best_model_dir / Path(analysis.best_checkpoint._local_path).name
+
+best_ckpt_dir = (
+    "/homes/wkel2/iib_project_lfads/scripts/runs/vlPAG_pbt/vlPAG/"
+    "260202_pbt/best_model/checkpoint_epoch=179-step=720"
+)
+
 run_model(
     overrides=mandatory_overrides,
     checkpoint_dir=best_ckpt_dir,
-    config_path="../configs/pbt.yaml",
+    config_path="../configs/pbt_bst.yaml",
     do_train=False,
 )
