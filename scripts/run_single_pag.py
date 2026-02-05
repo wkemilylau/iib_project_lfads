@@ -6,8 +6,8 @@ from pathlib import Path
 from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS -----------
-PROJECT_STR = "pag"
-DATASET_STR = "PAG"
+PROJECT_STR = "PAG"
+DATASET_STR = "EAA"
 RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
 RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 OVERWRITE = True
