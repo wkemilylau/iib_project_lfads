@@ -6,8 +6,8 @@ from pathlib import Path
 from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS -----------
-PROJECT_STR = "PAG"
-DATASET_STR = "EAA"
+PROJECT_STR = "bst"
+DATASET_STR = "vlPAG_lPAG_resampled"
 RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
 RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 OVERWRITE = True
@@ -26,5 +26,5 @@ run_model(
         "datamodule": DATASET_STR,
         "model": DATASET_STR,
     },
-    config_path="../configs/single_pag.yaml",
+    config_path="../configs/single_vlPAG_lPAG_resampled.yaml",
 )

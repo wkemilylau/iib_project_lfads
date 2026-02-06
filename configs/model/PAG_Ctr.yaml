@@ -13,7 +13,7 @@ con_dim: 64
 co_dim: 4
 ic_dim: 64
 gen_dim: 200
-fac_dim: 60
+fac_dim: 80
 
 # --------- readin / readout --------- #
 readin:
