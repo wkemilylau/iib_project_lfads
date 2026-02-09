@@ -10,10 +10,10 @@ from ray.tune.suggest.basic_variant import BasicVariantGenerator
 from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS -----------
-PROJECT_STR = "lfads-torch-example"
-DATASET_STR = "nlb_mc_maze"
-RUN_TAG = datetime.now().strftime("%y%m%d") + "_exampleMulti"
-RUN_DIR = Path("/snel/share/runs") / PROJECT_STR / DATASET_STR / RUN_TAG
+PROJECT_STR = "PAG"
+DATASET_STR = "PAG_multisession"
+RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
+RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 # ------------------------------
 
 # Set the mandatory config overrides to select datamodule and model

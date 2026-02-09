@@ -7,8 +7,8 @@ from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS -----------
 PROJECT_STR = "bst"
-DATASET_STR = "vlPAG"
-RUN_TAG = datetime.now().strftime("%y%m%d") + "_facdim60_2"
+DATASET_STR = "vlPAG_cropped"
+RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
 RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 OVERWRITE = True
 # ------------------------------

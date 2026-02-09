@@ -38,6 +38,7 @@ share/
 *.cfg
 runs/
 *.h5
+*.mat
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

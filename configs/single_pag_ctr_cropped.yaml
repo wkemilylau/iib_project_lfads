@@ -1,6 +1,6 @@
 defaults:
-  - model: vlPAG_lPAG_resampled
-  - datamodule: vlPAG_lPAG_resampled
+  - model: PAG_Ctr_cropped
+  - datamodule: PAG_Ctr_cropped
   - callbacks: default
   - _self_
 
@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output_vlPAG_lPAG_resampled.h5
+    filename: lfads_output_pag_ctr_cropped.h5
     num_samples: 50

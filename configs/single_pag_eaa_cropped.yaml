@@ -1,6 +1,6 @@
 defaults:
-  - model: vlPAG_cropped
-  - datamodule: vlPAG_cropped
+  - model: PAG_EAA_cropped
+  - datamodule: PAG_EAA_cropped
   - callbacks: default
   - _self_
 
@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output_bst_cropped.h5
+    filename: lfads_output_pag_eaa_cropped.h5
     num_samples: 50

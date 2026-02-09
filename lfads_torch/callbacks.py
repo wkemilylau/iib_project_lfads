@@ -135,7 +135,14 @@ class RasterPlot(pl.Callback):
                 figsize=(3 * self.n_samples, 10),
                 gridspec_kw={"height_ratios": height_ratios},
             )
-            for i, ax_col in enumerate(axes.T):
+
+            if self.n_samples == 1:
+                axes = axes[:, np.newaxis]
+
+            num_actual_samples = recon_data.shape[0]
+
+            for i in range(min(self.n_samples, num_actual_samples)):
+                ax_col = axes[:, i]
                 for j, (ax, array) in enumerate(zip(ax_col, plot_arrays)):
                     if j < len(plot_arrays) - 1:
                         ax.imshow(array[i].T, interpolation="none", aspect="auto")

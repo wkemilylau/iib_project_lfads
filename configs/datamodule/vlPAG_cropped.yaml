@@ -1,0 +1,5 @@
+_target_: lfads_torch.datamodules.BasicDataModule
+datafile_pattern: ${relpath:datasets/vlPAG_cropped.h5}
+batch_keys: []
+attr_keys: []
+batch_size: 3
