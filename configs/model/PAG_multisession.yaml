@@ -1,7 +1,7 @@
 _target_: lfads_torch.model.LFADS
 
 # --------- architecture --------- #
-encod_data_dim: 60
+encod_data_dim: 100
 encod_seq_len: 300
 recon_seq_len: ${model.encod_seq_len}
 ext_input_dim: 0
@@ -11,15 +11,15 @@ ci_enc_dim: 60
 ci_lag: 1
 con_dim: 60
 co_dim: 4
-ic_dim: 600
-gen_dim: 200
-fac_dim: 60
+ic_dim: 400
+gen_dim: 400
+fac_dim: 40
 
 # --------- readin / readout --------- #
 readin:
   _target_: lfads_torch.modules.readin_readout.MultisessionReadin
   datafile_pattern: ${datamodule.datafile_pattern}
-  out_features: ${model.fac_dim}
+  out_features: ${model.encod_data_dim}
   pcr_init: False
 
 readout:
