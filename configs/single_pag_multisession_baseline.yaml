@@ -1,6 +1,6 @@
 defaults:
-  - model: PAG_Ctr_cropped
-  - datamodule: PAG_Ctr_cropped
+  - model: PAG_multisession_baseline
+  - datamodule: PAG_multisession
   - callbacks: default
   - _self_
 
@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output_pag_ctr_cropped_6.h5
+    filename: lfads_output_pag_multisession_baseline_2.h5
     num_samples: 50

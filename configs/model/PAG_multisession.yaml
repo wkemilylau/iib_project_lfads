@@ -6,13 +6,13 @@ encod_seq_len: 300
 recon_seq_len: ${model.encod_seq_len}
 ext_input_dim: 0
 ic_enc_seq_len: 0
-ic_enc_dim: 60
-ci_enc_dim: 60
+ic_enc_dim: 40
+ci_enc_dim: 40
 ci_lag: 1
-con_dim: 60
+con_dim: 40
 co_dim: 4
-ic_dim: 400
-gen_dim: 400
+ic_dim: 40
+gen_dim: 200
 fac_dim: 40
 
 # --------- readin / readout --------- #
@@ -33,7 +33,7 @@ train_aug_stack:
   _target_: lfads_torch.modules.augmentations.AugmentationStack
   transforms:
     - _target_: lfads_torch.modules.augmentations.CoordinatedDropout
-      cd_rate: 0.3 # sampled
+      cd_rate: 0.25 # sampled
       cd_pass_rate: 0.0
       ic_enc_seq_len: ${model.ic_enc_seq_len}
   batch_order: [0]

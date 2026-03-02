@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output_pag_multisession_4.h5
+    filename: lfads_output_pag_multisession_11.h5
     num_samples: 50

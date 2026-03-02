@@ -7,8 +7,8 @@ from lfads_torch.run_model import run_model
 
 # ---------- OPTIONS -----------
 PROJECT_STR = "pag"
-DATASET_STR = "PAG_multisession"
-RUN_TAG = datetime.now().strftime("%y%m%d") + "_2"
+DATASET_STR = "PAG_multisession_baseline"
+RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
 RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 OVERWRITE = True
 # ------------------------------
@@ -26,5 +26,5 @@ run_model(
         "datamodule": DATASET_STR,
         "model": DATASET_STR,
     },
-    config_path="../configs/single_pag_multisession.yaml",
+    config_path="../configs/single_pag_multisession_baseline.yaml",
 )
