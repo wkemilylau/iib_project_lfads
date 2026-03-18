@@ -1,6 +1,6 @@
 defaults:
-  - model: PAG_multisession_baseline
-  - datamodule: PAG_multisession
+  - model: v1
+  - datamodule: v1
   - callbacks: default
   - _self_
 
@@ -51,5 +51,5 @@ posterior_sampling:
   use_best_ckpt: True
   fn:
     _target_: lfads_torch.post_run.analysis.run_posterior_sampling
-    filename: lfads_output_pag_multisession_baseline_3.h5
+    filename: lfads_output_v1.h5
     num_samples: 50
