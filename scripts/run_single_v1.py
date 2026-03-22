@@ -8,7 +8,7 @@ from lfads_torch.run_model import run_model
 # ---------- OPTIONS -----------
 PROJECT_STR = "v1"
 DATASET_STR = "v1"
-RUN_TAG = datetime.now().strftime("%y%m%d") + "_1"
+RUN_TAG = datetime.now().strftime("%y%m%d") + "_5"
 RUN_DIR = Path("runs") / PROJECT_STR / DATASET_STR / RUN_TAG
 OVERWRITE = True
 # ------------------------------

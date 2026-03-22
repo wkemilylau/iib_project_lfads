@@ -1,9 +1,9 @@
 _target_: lfads_torch.model.LFADS
 
 # --------- architecture --------- #
-encod_data_dim: 805
-encod_seq_len: 250
-recon_seq_len: 250
+encod_data_dim: 884
+encod_seq_len: 50
+recon_seq_len: 50
 ext_input_dim: 0
 ic_enc_seq_len: 0
 ic_enc_dim: 64
@@ -12,7 +12,7 @@ ci_lag: 2
 con_dim: 64
 co_dim: 4
 ic_dim: 64
-gen_dim: 200
+gen_dim: 300
 fac_dim: 60
 
 # --------- readin / readout --------- #
@@ -23,7 +23,7 @@ readout:
   modules:
     - _target_: lfads_torch.modules.readin_readout.FanInLinear
       in_features: ${model.fac_dim}
-      out_features: 805
+      out_features: 884
 
 # --------- augmentation --------- #
 train_aug_stack:
@@ -61,7 +61,7 @@ loss_scale: 1.0e+4
 recon_reduce_mean: True
 
 # --------- learning rate --------- #
-lr_init: 4.0e-3
+lr_init: 1.0e-4
 lr_stop: 1.0e-5
 lr_decay: 0.95
 lr_patience: 6
