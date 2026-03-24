@@ -10,10 +10,10 @@ ic_enc_dim: 64
 ci_enc_dim: 64
 ci_lag: 2
 con_dim: 64
-co_dim: 4
+co_dim: 8
 ic_dim: 64
-gen_dim: 300
-fac_dim: 60
+gen_dim: 350
+fac_dim: 80
 
 # --------- readin / readout --------- #
 readin:
@@ -61,7 +61,7 @@ loss_scale: 1.0e+4
 recon_reduce_mean: True
 
 # --------- learning rate --------- #
-lr_init: 1.0e-4
+lr_init: 5.0e-4
 lr_stop: 1.0e-5
 lr_decay: 0.95
 lr_patience: 6
